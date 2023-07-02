@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Create from "./components/Create";
+import Read from "./components/Read";
+import Update from "./components/Update";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div
+        className="justify-content-center d-grid bg-dark"
+        style={{ color: "white" }}
+      >
+        <h1>CRUD OPREATION APP</h1>
+      </div>
+      <div className="container justify-content-center">
+        <Routes>
+          <Route exact path="/" element={<Read />}></Route>
+          <Route exact path="/create" element={<Create />}></Route>
+          <Route exact path="/update" element={<Update />}></Route>
+        </Routes>
+        {/* <Create /> */}
+      </div>
+    </>
   );
 }
 
